@@ -1,0 +1,28 @@
+<header>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container">
+      <a class="navbar-brand" href="/">GeoDB Cities</a>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/lista">Buscar Ciudades</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/acerca-de">Acerca De</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<main class="container mt-4">
+  <router-outlet></router-outlet>
+</main>
+
+<footer class="bg-dark text-white text-center py-3 mt-4">
+  © 2025 GeoDB Cities - Todos los derechos reservados.
+</footer>

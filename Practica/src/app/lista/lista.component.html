@@ -1,0 +1,32 @@
+<div class="container">
+  <h2>Buscar Ciudades</h2>
+
+  <div class="input-group mb-3">
+    <input 
+      type="text" 
+      class="form-control" 
+      placeholder="Nombre de la ciudad..." 
+      [(ngModel)]="busqueda">
+    <button 
+      class="btn btn-primary" 
+      (click)="buscarCiudades()">
+      Buscar
+    </button>
+  </div>
+
+  <div *ngIf="error" class="alert alert-danger">
+    {{ error }}
+  </div>
+
+  <div *ngIf="ciudades.length > 0">
+    <ul class="list-group">
+      <li *ngFor="let ciudad of ciudades" class="list-group-item">
+        <h5>{{ ciudad.name }}, {{ ciudad.country }}</h5>
+        <p>Región: {{ ciudad.region }}</p>
+        <p>Población: {{ ciudad.population | number }}</p>
+        <p>Latitud: {{ ciudad.latitude }} | Longitud: {{ ciudad.longitude }}</p>
+        <p>Zona Horaria: {{ ciudad.timezone }}</p>
+      </li>
+    </ul>
+  </div>
+</div>
