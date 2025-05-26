@@ -4,8 +4,6 @@ import { Component } from '@angular/core';
   selector: 'app-acercade',
   standalone: false,
   templateUrl: './acercade.component.html',
-  styleUrl: './acercade.component.css'
+  styleUrls: ['./acercade.component.css']
 })
-export class AcercadeComponent {
-
-}
+export class AcercadeComponent {}

@@ -4,7 +4,7 @@ import { City } from '../models/city';
 
 @Component({
   selector: 'app-lista',
-  standalone: true,
+  standalone: false,
   templateUrl: './lista.component.html',
   styleUrls: ['./lista.component.css']
 })
