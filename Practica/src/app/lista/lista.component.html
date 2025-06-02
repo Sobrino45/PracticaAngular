@@ -1,7 +1,7 @@
 <div class="container">
-  <h2>Buscar Ciudades</h2>
+  <h2 class="mb-4">Buscar Ciudades</h2>
 
-  <div class="input-group mb-3">
+  <div class="input-group mb-4">
     <input 
       type="text" 
       class="form-control" 
@@ -18,15 +18,24 @@
     {{ error }}
   </div>
 
-  <div *ngIf="ciudades.length > 0">
-    <ul class="list-group">
-      <li *ngFor="let ciudad of ciudades" class="list-group-item">
-        <h5>{{ ciudad.name }}, {{ ciudad.country }}</h5>
-        <p>Región: {{ ciudad.region }}</p>
-        <p>Población: {{ ciudad.population | number }}</p>
-        <p>Latitud: {{ ciudad.latitude }} | Longitud: {{ ciudad.longitude }}</p>
-        <p>Zona Horaria: {{ ciudad.timezone }}</p>
-      </li>
-    </ul>
+  <div *ngIf="!error && ciudades.length === 0 && busqueda" class="alert alert-info">
+    No se encontraron ciudades con ese nombre.
+  </div>
+
+  <div class="row">
+    <div class="col-md-6 mb-4" *ngFor="let ciudad of ciudades">
+      <div class="card h-100">
+        <div class="card-body">
+          <h5 class="card-title">{{ ciudad.name }}, {{ ciudad.country }}</h5>
+          <p class="card-text">
+            <strong>Región:</strong> {{ ciudad.region }}<br>
+            <strong>Población:</strong> {{ ciudad.population | number }}<br>
+            <strong>Latitud:</strong> {{ ciudad.latitude }}<br>
+            <strong>Longitud:</strong> {{ ciudad.longitude }}<br>
+            <strong>Zona Horaria:</strong> {{ ciudad.timezone }}
+          </p>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
