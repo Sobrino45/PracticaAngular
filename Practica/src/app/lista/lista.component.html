@@ -29,11 +29,11 @@
           <h5 class="card-title">{{ ciudad.name }}, {{ ciudad.country }}</h5>
           <p class="card-text">
             <strong>Región:</strong> {{ ciudad.region }}<br>
-            <strong>Población:</strong> {{ ciudad.population | number }}<br>
+            <strong>Población:</strong> {{ ciudad.population | abreviarNumero }}<br>
+            <strong>Tamaño:</strong> {{ ciudad.size | abreviarNumero }}
             <strong>Latitud:</strong> {{ ciudad.latitude }}<br>
             <strong>Longitud:</strong> {{ ciudad.longitude }}<br>
             <strong>Zona Horaria:</strong> {{ ciudad.timezone }}
-          </p>
         </div>
       </div>
     </div>
