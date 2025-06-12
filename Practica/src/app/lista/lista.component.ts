@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { GeodbService } from '../services/geodb.service';
 import { City } from '../models/city';
+import { FavoritosService } from '../services/favoritos.service';
 
 @Component({
   selector: 'app-lista',
@@ -13,7 +14,7 @@ export class ListaComponent {
   busqueda: string = '';
   error: string = '';
 
-  constructor(private geodbService: GeodbService) {}
+  constructor(private geodbService: GeodbService, private favoritosService: FavoritosService) {}
 
   buscarCiudades() {
     if (this.busqueda.trim() !== '') {
@@ -30,5 +31,9 @@ export class ListaComponent {
       this.error = 'Introduce un nombre para buscar.';
       this.ciudades = [];
     }
+  }
+
+  agregarAFavoritos(ciudad: City) {
+    this.favoritosService.agregarFavorito(ciudad);
   }
 }

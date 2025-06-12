@@ -9,6 +9,7 @@ import { HomeComponent } from './home/home.component';
 import { ListaComponent } from './lista/lista.component';
 import { AcercadeComponent } from './acercade/acercade.component';
 import { AbreviarNumeroPipe } from './pipes/abreviar-numero.pipe';
+import { FavoritosComponent } from './favoritos/favoritos.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { AbreviarNumeroPipe } from './pipes/abreviar-numero.pipe';
     HomeComponent,
     Error404Component,
     ListaComponent,
-    AcercadeComponent
+    AcercadeComponent,
+    FavoritosComponent
   ],
   imports: [
     BrowserModule,
