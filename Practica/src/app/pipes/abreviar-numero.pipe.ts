@@ -4,9 +4,12 @@ import { Pipe, PipeTransform } from '@angular/core';
   name: 'abreviarNumero',
   standalone: true
 })
-
 export class AbreviarNumeroPipe implements PipeTransform {
-  transform(value: number): string {
+  transform(value: number | null | undefined): string {
+    if (value == null || isNaN(value)) {
+      return 'N/A';
+    }
+
     if (value >= 1_000_000_000) {
       return (value / 1_000_000_000).toFixed(1).replace(/\.0$/, '') + 'G';
     } else if (value >= 1_000_000) {
@@ -17,5 +20,4 @@ export class AbreviarNumeroPipe implements PipeTransform {
       return value.toString();
     }
   }
-
 }
